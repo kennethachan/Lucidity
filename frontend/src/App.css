@@ -1,4 +1,82 @@
 .App {
   text-align: center;
+  background-color: #bea6d9;
+}
+
+.App-header {
+  background-color:#6F62A0;
+  padding: 20px;
+  text-align: right;
+  font-weight: bold;
+  color: white;
+}
+
+.title {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.headers {
+  color: white;
+  margin-bottom: 20px;
+  display:flex;
+justify-content: space-between;
+
+}
+.mainImg {
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  border-radius: 15px;;
+}
+
+.arrows {
+  position: relative;
+  bottom: 50px;
+}
+.left-arrow {
+font-size: 20px;
+color: white;
+background:none;
+border: none;
+cursor: pointer;
+position: relative;
+right: 170px;
+bottom: 170px;
+}
+
+.right-arrow {
+  font-size: 20px;
+  color: white;
+  background:none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+left: 170px;
+bottom: 170px;
+}
+
+.audio-container {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  width: 300px;
+  height: 500px;
+  position: relative;
+  bottom: 500px;
+  left: 30px;
+  color: white;
+font-weight: bold;
+overflow: hidden;
+overflow-y: scroll;
+direction: rtl;
+background-color: #6F62A0;
+padding: 20px;
+}
+
+.player {
+  border-radius: 20px;
+ margin-bottom: 30px;
+  border-radius: 20px;
+
 }
 
