@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const Note = new Schema(
   {
     text: { type: String, required: true },
-    complete: { type: String, default: false },
+    complete: { type: Boolean, default: false },
   },
   { timestamps: true }
 )
