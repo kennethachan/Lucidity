@@ -3,7 +3,7 @@ import "./App.css"
 import GIFs from "./components/GIFs"
 import Header from "./components/Header"
 import Audio from "./components/Audio"
-import Task from "./components/Task"
+import Note from "./components/Note"
 
 function App() {
   return (
@@ -11,9 +11,11 @@ function App() {
       <header className="App-header">
         <Header />
       </header>
-
-      <GIFs />
-      <Audio />
+      <div className="components">
+        <Audio />
+        <GIFs />
+        <Note />
+      </div>
     </div>
   )
 }
