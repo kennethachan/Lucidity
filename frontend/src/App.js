@@ -11,12 +11,7 @@ function App() {
       <header className="App-header">
         <Header />
       </header>
-      <h1 className="title">Lucidity</h1>
-      <div className="headers">
-        <h3>tunes</h3>
 
-        <h3>checklist</h3>
-      </div>
       <GIFs />
       <Audio />
     </div>

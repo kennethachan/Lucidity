@@ -5,15 +5,22 @@
 
 .App-header {
   background-color:#6F62A0;
-  padding: 20px;
   text-align: right;
   font-weight: bold;
   color: white;
+  padding: 10px;
+  margin-bottom: 50px;
 }
 
 .title {
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+}
+
+.logo{
+  text-align: left;
+  padding:0;
+  margin:0;
 }
 
 .headers {
@@ -62,21 +69,28 @@ bottom: 170px;
   width: 300px;
   height: 500px;
   position: relative;
-  bottom: 500px;
-  left: 30px;
+  bottom: 435px;
+  left: 60px;
   color: white;
 font-weight: bold;
 overflow: hidden;
 overflow-y: scroll;
 direction: rtl;
 background-color: #6F62A0;
-padding: 20px;
+padding: 30px;
+border-radius: 25px;
+}
+
+.audio-container::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .player {
   border-radius: 20px;
  margin-bottom: 30px;
   border-radius: 20px;
+  position: relative;
+  right: 20px;
 
 }
 

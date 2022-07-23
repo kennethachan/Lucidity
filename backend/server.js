@@ -36,6 +36,8 @@ app.delete("/notes/delete/:id", async (req, res) => {
   res.json(deleteNote)
 })
 
+//
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })

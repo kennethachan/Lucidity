@@ -3,9 +3,8 @@ import React from "react"
 function Audio(props) {
   return (
     <div>
-      <h2>tunes</h2>
       <div className="audio-container">
-        <p>japanese jazz when driving at night</p>
+        <p>japanese jazz when driving on a warm night</p>
         <iframe
           className="player"
           width="100px"
