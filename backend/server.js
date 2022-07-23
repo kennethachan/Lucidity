@@ -36,7 +36,12 @@ app.delete("/notes/delete/:id", async (req, res) => {
   res.json(deleteNote)
 })
 
-//
+app.put("/notes/done/:id", async (req, res) => {
+  const note = await Note.findById(req.params.id)
+  note.done = !note.complete
+  note.save()
+  res.json(note)
+})
 
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
