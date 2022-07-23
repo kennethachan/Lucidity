@@ -4,7 +4,7 @@ function Audio(props) {
   return (
     <div>
       <div className="audio-container">
-        <p>japanese jazz when driving on a warm night</p>
+        {/* <p>japanese jazz when driving on a warm night</p>
         <iframe
           className="player"
           width="100px"
@@ -64,7 +64,7 @@ function Audio(props) {
           frameborder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/802758238&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-        ></iframe>
+        ></iframe> */}
       </div>
     </div>
   )

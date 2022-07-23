@@ -1,12 +1,14 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { useParams } from "react-router-dom"
 
 const URL = "http://localhost:3001"
 
 function Note(props) {
   const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState("")
+  const [input, setInput] = useState("")
 
   useEffect(() => {
     const getNotes = async () => {
@@ -17,26 +19,11 @@ function Note(props) {
     getNotes()
   }, [])
 
-  useEffect(() => {
-    const noteComplete = async () => {
-      const res = await axios.put(`${URL}/notes/done/62db6ef0537aad6b0cb4765c`)
-      console.log(res)
-      //   .then((res) => res.json())
-      // setNotes((notes) =>
-      //   notes.map((notez) => {
-      //     if (notez._id === res._id) {
-      //       notez.complete = res.complete
-      //     }
-      //     return notez
-      //   })
-      // )
-    }
-    noteComplete()
-  }, [])
-
   return (
     <div className="note-wrapper">
-      <h3>write it down</h3>
+      <h3 className="write">write it down</h3>
+      <button className="add">+</button>
+      <input className="input-text" placeholder={"write here"}></input>
       <div className="note-container">
         {notes.map((notez) => (
           <div
@@ -44,9 +31,8 @@ function Note(props) {
             key={notez._id}
             // onClick={() => noteComplete(notez._id)}
           >
-            <div className="checkbox"> Check</div>
             <div className="text">{notez.text}</div>
-            <div className="remove-note">X</div>
+            <button className="remove-note">X</button>
           </div>
         ))}
       </div>

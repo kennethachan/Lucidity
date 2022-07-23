@@ -1,3 +1,5 @@
+
+
 *{
   padding: 0;
   margin: 0;
@@ -81,6 +83,7 @@ direction: rtl;
 background-color: #6F62A0;
 padding: 30px;
 border-radius: 25px;
+font-size: 12px;
 }
 
 .audio-container::-webkit-scrollbar {
@@ -103,7 +106,73 @@ justify-content: space-evenly;
 }
 
 .note-wrapper {
-  width: 300px;
-  border: solid black 1px;
+  width: 450px;
+  background-color:#6F62A0;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  overflow: hidden;
+overflow-y: scroll;
+direction: rtl;
 }
 
+.note-wrapper::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.write {
+  margin-bottom: 10px;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.text {
+  background-color:#bea6d9;
+  width: 300px;
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  position: relative;
+  right: 100px;
+
+}
+
+.remove-note {
+  font-size: 12px;
+  color: red;
+  border: none;
+  background-color:#bea6d9;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  left: 175px;
+  bottom: 33px;
+  font-weight: bold;
+}
+
+.add {
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+  border: none;
+  background-color:#bea6d9;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  right: 15px;
+}
+
+.input-text {
+width:280px;
+padding: 20px;
+border-radius: 20px;
+border-style: none;
+position: relative;
+right: 20px;
+margin: 30px;
+
+
+
+}
