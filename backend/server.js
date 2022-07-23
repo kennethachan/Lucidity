@@ -3,6 +3,7 @@ const cors = require("cors")
 const logger = require("morgan")
 const db = require("./db")
 const Note = require("./models/Notes")
+const Parser = require("body-parser")
 
 const PORT = process.env.PORT || 3001
 
@@ -11,22 +12,28 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(logger("dev"))
+app.use(Parser.json())
 
 app.get("/", (req, res) => {
-  res.send("This is root!")
+  res.json("This is root!")
 })
 
 app.get("/notes", async (req, res) => {
   const notes = await Note.find()
-  res.send(notes)
+  res.json(notes)
 })
 
 app.post("/notes/new", (req, res) => {
-  const newNote = new Note({
+  const note = new Note({
     text: req.body.text,
   })
-  newNote.save()
-  res.json(newNote)
+  note.save()
+  res.json(note)
+})
+
+app.delete("/notes/delete/:id", async (req, res) => {
+  const deleteNote = await Note.findByIdAndDelete(req.params.id)
+  res.json(deleteNote)
 })
 
 app.listen(PORT, () => {
