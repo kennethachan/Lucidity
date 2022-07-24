@@ -34,8 +34,17 @@ function Landing(props) {
             placeholder="Password"
           ></input>{" "}
           <br />
-          <button className="login-btn">Login</button>
-          <button className="register-btn">Register</button>
+          <button className="login-btn">
+            {" "}
+            <Link className="login-btn" to="/">
+              Login
+            </Link>
+          </button>
+          <button className="register-btn">
+            <Link className="register-btn" to="/register">
+              Register
+            </Link>
+          </button>
         </div>
       </div>
     </div>

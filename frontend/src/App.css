@@ -232,7 +232,7 @@ margin: 30px;
   background-size: cover;
   border-radius: 15px;;
   border: solid 3px #6F62A0;
-  opacity: .5
+  opacity: .5;
 }
 
 .login-background {
@@ -280,6 +280,7 @@ border: none;
  margin-right: 10px;
  margin-bottom: 10px;
  cursor: pointer;
+ text-decoration: none;
 }
 
 .register-btn {
@@ -292,4 +293,5 @@ border: none;
    font-weight: bold;
    cursor: pointer;
    margin-bottom: 10px;
+   text-decoration: none;
 }
