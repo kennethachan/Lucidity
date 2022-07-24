@@ -9,7 +9,7 @@ const getNote = async (req, res) => {
   }
 }
 
-const saveNote = async (req, res) => {
+const addNote = async (req, res) => {
   try {
     const { text } = req.body
     const notes = await Notes.create({ text })
@@ -46,7 +46,7 @@ const updateNotes = async (req, res) => {
 
 module.exports = {
   getNote,
-  saveNote,
+  addNote,
   deleteNote,
   updateNotes,
 }

@@ -26,15 +26,15 @@ export default function NoteText({ text, remove, update }) {
         <>
           <div className="text">{text}</div>
           <div className="icons">
-            <button className="" onClick={() => setEdit(true)}>
-              EDIT
+            <button className="edit" onClick={() => setEdit(true)}>
+              edit
             </button>
           </div>
         </>
       )}
 
-      <button className="" onClick={remove}>
-        REMOVE
+      <button className="delete" onClick={remove}>
+        X
       </button>
     </div>
   )

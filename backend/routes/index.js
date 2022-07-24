@@ -6,7 +6,7 @@ router.get("/", (req, res) => res.send("This is root!"))
 
 router.get("/get-note", controllers.getNote)
 
-router.post("/save-note", controllers.saveNote)
+router.post("/add-note", controllers.addNote)
 
 router.delete("/delete-note/:Id", controllers.deleteNote)
 

@@ -107,13 +107,13 @@ justify-content: space-evenly;
 
 .note-wrapper {
   width: 450px;
+  height:560px;
   background-color:#6F62A0;
   border-radius: 20px;
   color: white;
   font-size: 12px;
   overflow: hidden;
 overflow-y: scroll;
-direction: rtl;
 }
 
 .note-wrapper::-webkit-scrollbar {
@@ -121,21 +121,11 @@ direction: rtl;
 }
 
 .write {
+  font-size: 20px;
   margin-bottom: 10px;
   padding: 20px;
   padding-bottom: 10px;
 }
-
-/* .text {
-  background-color:#bea6d9;
-  width: 300px;
-  padding: 10px;
-  border-radius: 15px;
-  font-weight: bold;
-  position: relative;
-  right: 100px;
-
-} */
 
 .remove-note {
   font-size: 12px;
@@ -152,27 +142,76 @@ direction: rtl;
 }
 
 .add {
+  width: 40px;
   font-size: 18px;
   font-weight: bold;
   color: green;
   border: none;
   background-color:#bea6d9;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
   position: relative;
-  right: 15px;
+  left:375px;
+  bottom: 0px;
 }
 
 .input-text {
-width:280px;
+width:300px;
 padding: 20px;
 border-radius: 20px;
 border-style: none;
 position: relative;
-right: 20px;
+right: 55px;
 margin: 30px;
+}
 
+.text {
+  width: 280px;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color:#bea6d9;
+  position: relative;
+  left: 20px;
+  padding: 10px;
+}
 
+.icons {
+  padding: 0;
+  margin:0;
+}
+.item {
+  padding: 0;
+  margin:0;
+  height: 60px;
+}
 
+.edit {
+  width: 40px;
+  font-size: 12px;
+  font-weight: bold;
+  color: green;
+  border: none;
+  background-color:#bea6d9;
+  padding: 7px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  left: 140px;
+  bottom: 32px;
+}
+
+.delete {
+  width: 40px;
+  font-size: 12px;
+  font-weight: bold;
+  color: red;
+  border: none;
+  background-color:#bea6d9;
+  padding: 7px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  left: 190px;
+  bottom: 60px;
 }

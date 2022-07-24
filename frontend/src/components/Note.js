@@ -34,10 +34,35 @@ function Note(props) {
       .catch((error) => console.log(error))
   }
 
+  const addText = async () => {
+    if (update === "") {
+      const res = await axios
+        .post(`${URL}/add-note/`, { text })
+        .then((res) => {
+          console.log(res.data)
+          setText("")
+          getNotes()
+        })
+        .catch((error) => console.log(error))
+    } else {
+      const res = await axios
+        .post(`${URL}/add-note/`, { _id: update, text })
+        .then((res) => {
+          console.log(res.data)
+          setText("")
+          setUpdate("")
+          getNotes()
+        })
+        .catch((error) => console.log(error))
+    }
+  }
+
   return (
     <div className="note-wrapper">
       <h3 className="write">write it down</h3>
-      <button className="add">+</button>
+      <button className="add" onClick={addText}>
+        +
+      </button>
       <input
         className="input-text"
         placeholder={"write here"}
@@ -46,7 +71,7 @@ function Note(props) {
       ></input>
       <div className="note-container">
         <div className="notes">
-          <div className="text">
+          <div className="note-text">
             {note.map((text) => (
               <NoteText
                 key={text._id}
@@ -56,7 +81,6 @@ function Note(props) {
               />
             ))}
           </div>
-          <button className="remove-note">X</button>
         </div>
       </div>
     </div>
