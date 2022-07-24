@@ -59,7 +59,7 @@ function Note(props) {
 
   return (
     <div className="note-wrapper">
-      <h3 className="write">write it down</h3>
+      <h3 className="write">w r i t e i t d o w n</h3>
       <button className="add" onClick={addText}>
         +
       </button>
