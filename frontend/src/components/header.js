@@ -1,10 +1,20 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 function Header(props) {
   return (
-    <div>
+    <div className="App-header">
       <h1 className="logo">Lucidity</h1>
-      <a> Logout </a>
+      <div>
+        {
+          <Link className="nav" to="/">
+            home
+          </Link>
+        }
+        <Link className="nav" to="/landing">
+          front page
+        </Link>
+      </div>
     </div>
   )
 }
