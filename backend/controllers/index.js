@@ -1,4 +1,5 @@
 const Notes = require("../models/Notes")
+const Users = require("../models/Users")
 
 const getNote = async (req, res) => {
   try {
@@ -44,9 +45,30 @@ const updateNotes = async (req, res) => {
   }
 }
 
+const getUser = async (req, res) => {
+  try {
+    const users = await Users.find()
+    return res.status(200).json({ users })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const newUser = async (req, res) => {
+  try {
+    const { password, email } = req.body
+    const users = await Users.create({ password, email })
+    return res.status(201).send("User Added!")
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getNote,
   addNote,
   deleteNote,
   updateNotes,
+  getUser,
+  newUser,
 }
