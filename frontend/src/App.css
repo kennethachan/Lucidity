@@ -126,7 +126,7 @@ direction: rtl;
   padding-bottom: 10px;
 }
 
-.text {
+/* .text {
   background-color:#bea6d9;
   width: 300px;
   padding: 10px;
@@ -135,7 +135,7 @@ direction: rtl;
   position: relative;
   right: 100px;
 
-}
+} */
 
 .remove-note {
   font-size: 12px;

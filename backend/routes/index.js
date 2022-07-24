@@ -4,12 +4,12 @@ const router = Router()
 
 router.get("/", (req, res) => res.send("This is root!"))
 
-router.get("/get-todo", controllers.getNote)
+router.get("/get-note", controllers.getNote)
 
-router.post("/save-todo", controllers.saveNote)
+router.post("/save-note", controllers.saveNote)
 
-router.post("/delete-todo", controllers.deleteNote)
+router.delete("/delete-note/:Id", controllers.deleteNote)
 
-router.post("/update-todo", controllers.updateNotes)
+router.put("/update-note/:Id", controllers.updateNotes)
 
 module.exports = router

@@ -1,40 +1,63 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { useParams } from "react-router-dom"
+import NoteText from "./NoteText"
 
 const URL = "http://localhost:3001"
 
 function Note(props) {
-  const [notes, setNotes] = useState([])
-  const [newNote, setNewNote] = useState("")
-  const [input, setInput] = useState("")
+  const [text, setText] = useState("")
+  const [note, setNote] = useState([])
+  const [update, setUpdate] = useState("")
+
+  const getNotes = async () => {
+    const res = await axios.get(`${URL}/get-note`)
+    setNote(res.data.notes)
+    console.log(res.data.notes)
+  }
 
   useEffect(() => {
-    const getNotes = async () => {
-      const res = await axios.get(`${URL}/notes`)
-      console.log(res)
-      setNotes(res.data)
-    }
     getNotes()
   }, [])
+
+  const deleteText = async (_id) => {
+    const res = await axios
+      .delete(`${URL}/delete-note/${_id}`)
+      .then((_res) => getNotes())
+      .catch((error) => console.log(error))
+  }
+
+  const updateText = async (_id, text) => {
+    const res = await axios
+      .put(`${URL}/update-note/${_id}`, { text })
+      .then((_res) => getNotes())
+      .catch((error) => console.log(error))
+  }
 
   return (
     <div className="note-wrapper">
       <h3 className="write">write it down</h3>
       <button className="add">+</button>
-      <input className="input-text" placeholder={"write here"}></input>
+      <input
+        className="input-text"
+        placeholder={"write here"}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      ></input>
       <div className="note-container">
-        {notes.map((notez) => (
-          <div
-            className={"note" + (notez.complete ? "is-complete" : "")}
-            key={notez._id}
-            // onClick={() => noteComplete(notez._id)}
-          >
-            <div className="text">{notez.text}</div>
-            <button className="remove-note">X</button>
+        <div className="notes">
+          <div className="text">
+            {note.map((text) => (
+              <NoteText
+                key={text._id}
+                text={text.text}
+                remove={() => deleteText(text._id)}
+                update={(updatedText) => updateText(text._id, updatedText)}
+              />
+            ))}
           </div>
-        ))}
+          <button className="remove-note">X</button>
+        </div>
       </div>
     </div>
   )

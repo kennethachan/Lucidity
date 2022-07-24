@@ -21,8 +21,7 @@ const saveNote = async (req, res) => {
 
 const deleteNote = async (req, res) => {
   try {
-    const { _id } = req.body
-    const deleted = await Notes.findByIdAndDelete(id)
+    const deleted = await Notes.findByIdAndDelete(req.params.Id)
     if (deleted) {
       return res.status(200).send("Note deleted")
     }
@@ -34,16 +33,12 @@ const deleteNote = async (req, res) => {
 
 const updateNotes = async (req, res) => {
   try {
-    const { _id, text } = req.body
-    await Notes.findByIdAndUpdate(_id, { text }, (err, notes) => {
-      if (err) {
-        res.status(500).send(err)
-      }
-      if (!notes) {
-        res.status(500).send("Note not found!")
-      }
-      return res.status(200).json(notes)
-    })
+    const { text } = req.body
+    const note = await Notes.findByIdAndUpdate(req.params.Id, { text })
+    if (!note) {
+      res.status(500).send("Note not found!")
+    }
+    return res.status(200).json(note)
   } catch (error) {
     return res.status(500).send(error.message)
   }
