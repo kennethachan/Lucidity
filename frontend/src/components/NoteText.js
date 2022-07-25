@@ -15,10 +15,10 @@ export default function NoteText({ text, remove, update }) {
     <div className="item">
       {edit ? (
         <>
-          <input defaultValue={text} className="text" ref={input} />
+          <input defaultValue={text} className="edit-text" ref={input} />
           <div className="icons">
-            <button className="" onClick={saveText}>
-              SAVE
+            <button className="save" onClick={saveText}>
+              save
             </button>
           </div>
         </>

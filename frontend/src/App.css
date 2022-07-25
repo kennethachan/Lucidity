@@ -99,11 +99,21 @@ font-size: 12px;
 
 .player {
   border-radius: 20px;
- margin-bottom: 30px;
+  margin-bottom: 30px;
+  margin-left:auto;
+  margin-right:auto;
+
+}
+
+.audio-name {
+  margin-top: auto;
+  margin-bottom: auto;
+  float: left;
+  background-color:#bea6d9;
+  padding: 7px;
   border-radius: 20px;
   position: relative;
-  right: 20px;
-
+  bottom: 15px;
 }
 
 .components {
@@ -203,6 +213,17 @@ margin: 30px;
   padding: 10px;
 }
 
+.edit-text {
+  width: 280px;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color:#bea6d9;
+  color: white;
+  position: relative;
+  right: 55px;
+  padding: 10px;
+}
+
 .icons {
   padding: 0;
   margin:0;
@@ -228,6 +249,21 @@ margin: 30px;
   bottom: 32px;
 }
 
+.save {
+  width: 50px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  background-color:rgb(0, 166, 0);
+  padding: 7px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  left: 140px;
+  bottom: 33px;
+}
+
 .delete {
   width: 40px;
   font-size: 12px;
@@ -245,12 +281,12 @@ margin: 30px;
 
 .landing-background {
   background-color:#bea6d9;
-  height: 1500px;
+  height: 1000px;
 }
 
 .landing-image {
   width: 800px;
-  margin-top: 100px;
+  margin-top: 70px;
   background-size: cover;
   border-radius: 15px;;
   border: solid 3px #6F62A0;
