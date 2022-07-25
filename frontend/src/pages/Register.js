@@ -9,31 +9,29 @@ function Register(props) {
   const URL = "http://localhost:3001"
   let navigate = useNavigate()
 
-  //createContext is code sourced online
-  const UserContext = React.createContext({})
-  const user = useContext(UserContext)
-
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [newReg, setNewReg] = useState(false)
+  const [changePage, setChangePage] = useState(false)
 
   const register = async (e) => {
     e.preventDefault()
-    const creds = { email, password }
-    const res = await axios
-      .post(`${URL}/new-user`, { email, password })
-      .then((res) => {
-        if (newReg == false) {
-          alert("Email already exists")
+
+    try {
+      const res = await axios
+        .post(`${URL}/new-user`, { email, password })
+        .then((res) => {
+          setChangePage(true)
           setEmail("")
           setPassword("")
-        } else {
-          setNewReg(true)
           navigate("/landing")
-          setEmail("")
-          setPassword("")
-        }
-      })
+        })
+      if (changePage) {
+        navigate("/landing")
+      }
+    } catch (error) {
+      alert("Email already exists")
+      setChangePage(false)
+    }
   }
 
   return (

@@ -11,7 +11,6 @@ function Landing(props) {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [changePage, setChangePage] = useState(false)
 
   const login = async (e) => {
     e.preventDefault()
