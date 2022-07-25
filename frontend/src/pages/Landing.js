@@ -24,7 +24,7 @@ function Landing(props) {
         ) {
           setEmail("")
           setPassword("")
-          navigate("/")
+          navigate("/home")
         } else {
           alert("Incorrect email or password")
         }

@@ -23,10 +23,10 @@ function Register(props) {
           setChangePage(true)
           setEmail("")
           setPassword("")
-          navigate("/landing")
+          navigate("/")
         })
       if (changePage) {
-        navigate("/landing")
+        navigate("/")
       }
     } catch (error) {
       alert("Email already exists")
