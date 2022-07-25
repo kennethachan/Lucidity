@@ -231,7 +231,7 @@ margin: 30px;
 .item {
   padding: 0;
   margin:0;
-  height: 60px;
+  height: fit-content;
 }
 
 .edit {
