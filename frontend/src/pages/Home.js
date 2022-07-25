@@ -11,10 +11,12 @@ function Home(props) {
       <header className="App-header">
         <Header />
       </header>
-      <div className="components">
-        <Audio />
-        <GIFs />
-        <Note />
+      <div className="components-wrapper">
+        <div className="components">
+          <Note />
+          <GIFs />
+          <Audio className="audio-component" />
+        </div>
       </div>
     </div>
   )
