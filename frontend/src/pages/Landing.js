@@ -1,30 +1,47 @@
 import React from "react"
 import { Link } from "react-router-dom"
-
-const image = require("../gifs/mirror.gif")
+import { useState, useEffect, useContext } from "react"
+import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 function Landing(props) {
+  const image = require("../gifs/mirror.gif")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [changePage, setChangePage] = useState(false)
+  let navigate = useNavigate()
+
+  //createContext is code sourced online
+  const UserContext = React.createContext({})
+  const user = useContext(UserContext)
+
+  const login = async (e) => {
+    e.preventDefault()
+    const res = await axios
+      .post(`${URL}/get-users`, { email, password })
+      .then((response) => {
+        user.setEmail(response.cred.email)
+        setEmail("")
+        setPassword("")
+        setChangePage(true)
+      })
+  }
+
   return (
     <div className="landing-background">
       <div className="App-header">
-        <h1 className="logo">Lucidity</h1>
-        <div>
-          <Link className="nav" to="/landing">
-            logout
-          </Link>
-          <Link className="nav" to="/">
-            home
-          </Link>
-        </div>
+        <h1 className="landing-logo">Lucidity</h1>
       </div>
       <div className="login-container">
         <img className="landing-image" src={image}></img>
-        <div className="login-background">
+        <form className="login-background" onSubmit={(e) => login(e)}>
           <h3 className="email">Email</h3>
           <input
             className="email-input"
             type="email"
             placeholder="Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           ></input>{" "}
           <br />
           <h3 className="password">Password</h3>
@@ -32,6 +49,8 @@ function Landing(props) {
             className="password-input"
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           ></input>{" "}
           <br />
           <button className="login-btn">
@@ -45,7 +64,7 @@ function Landing(props) {
               Register
             </Link>
           </button>
-        </div>
+        </form>
       </div>
     </div>
   )

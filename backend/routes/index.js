@@ -12,7 +12,7 @@ router.delete("/delete-note/:Id", controllers.deleteNote)
 
 router.put("/update-note/:Id", controllers.updateNotes)
 
-router.get("/get-users/:user-:password", controllers.getUser)
+router.get("/get-users", controllers.getUser)
 
 router.post("/new-user", controllers.newUser)
 
