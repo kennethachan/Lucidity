@@ -295,3 +295,16 @@ border: none;
    margin-bottom: 10px;
    text-decoration: none;
 }
+
+.back-btn {
+  width: 80px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+   background-color:#bea6d9;
+   color:black;
+   font-weight: bold;
+   cursor: pointer;
+   margin-bottom: 10px;
+   text-decoration: none;
+}
