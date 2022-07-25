@@ -47,7 +47,7 @@ const updateNotes = async (req, res) => {
 
 const getUser = async (req, res) => {
   try {
-    const users = await Users.find()
+    const users = await Users.findOne()
     return res.status(200).json({ users })
   } catch (error) {
     return res.status(500).send(error.message)

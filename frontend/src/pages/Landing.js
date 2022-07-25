@@ -6,24 +6,29 @@ import { useNavigate } from "react-router-dom"
 
 function Landing(props) {
   const image = require("../gifs/mirror.gif")
+  const URL = "http://localhost:3001"
+  let navigate = useNavigate()
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [changePage, setChangePage] = useState(false)
-  let navigate = useNavigate()
-
-  //createContext is code sourced online
-  const UserContext = React.createContext({})
-  const user = useContext(UserContext)
 
   const login = async (e) => {
     e.preventDefault()
     const res = await axios
-      .post(`${URL}/get-users`, { email, password })
-      .then((response) => {
-        user.setEmail(response.cred.email)
-        setEmail("")
-        setPassword("")
-        setChangePage(true)
+      .get(`${URL}/get-users/${email}-${password}`)
+      .then((res) => {
+        console.log(res.data.users.email)
+        if (
+          email === res.data.users.email &&
+          password === res.data.users.password
+        ) {
+          setEmail("")
+          setPassword("")
+          navigate("/")
+        } else {
+          alert("Incorrect email or password")
+        }
       })
   }
 
@@ -53,12 +58,7 @@ function Landing(props) {
             onChange={(e) => setPassword(e.target.value)}
           ></input>{" "}
           <br />
-          <button className="login-btn">
-            {" "}
-            <Link className="login-btn" to="/">
-              Login
-            </Link>
-          </button>
+          <button className="login-btn">Login</button>
           <button className="register-btn">
             <Link className="register-btn" to="/register">
               Register

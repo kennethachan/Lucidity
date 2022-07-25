@@ -15,7 +15,7 @@ function Register(props) {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [changePage, setChangePage] = useState(false)
+  const [newReg, setNewReg] = useState(false)
 
   const register = async (e) => {
     e.preventDefault()
@@ -23,16 +23,17 @@ function Register(props) {
     const res = await axios
       .post(`${URL}/new-user`, { email, password })
       .then((res) => {
-        setEmail("")
-        setPassword("")
-        setChangePage(true)
+        if (newReg == false) {
+          alert("Email already exists")
+          setEmail("")
+          setPassword("")
+        } else {
+          setNewReg(true)
+          navigate("/landing")
+          setEmail("")
+          setPassword("")
+        }
       })
-    if (changePage) {
-      navigate("/landing")
-    } else {
-      setChangePage(false)
-      navigate("/landing")
-    }
   }
 
   return (
