@@ -12,6 +12,12 @@ import rose from "../gifs/rose.gif"
 import shoe from "../gifs/shoe.gif"
 import shoetwo from "../gifs/shoe2.gif"
 import tea from "../gifs/tea.gif"
+import nails from "../gifs/nails.gif"
+import beach from "../gifs/beach.gif"
+import coke from "../gifs/coke.gif"
+import tie from "../gifs/tie.gif"
+import typing from "../gifs/typing.gif"
+import drink from "../gifs/drink.gif"
 
 const GifsSlideShow = ({ imgs }) => {
   const [image, setImage] = useState(0)
@@ -69,6 +75,12 @@ function GIFs(props) {
           shoe,
           shoetwo,
           tea,
+          nails,
+          beach,
+          coke,
+          tie,
+          typing,
+          drink,
         ]}
       />
     </div>

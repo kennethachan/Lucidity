@@ -16,8 +16,8 @@
   text-align: right;
   font-weight: bold;
   color: white;
-  padding: 10px;
-  padding-bottom:1px;
+  padding: 1.3vh;
+  padding-bottom:.13vh;
   margin-bottom: 0px;
 }
 
@@ -29,7 +29,7 @@
 
 .landing-logo {
   text-align: left;
-  padding-bottom:18px;
+  padding-bottom:2.4vh;
   margin:0;
 }
 
@@ -37,18 +37,19 @@
   padding-bottom: 0;
   color: white;
   text-decoration: none;
-  padding-right: 20px;
+  padding-right: 2vh;
   position: relative;
-  bottom: 25px;
+  bottom: 2.5vh;
 
 }
 
 .mainImg {
-  width: 400px;
-  height: 400px;
+  width: 33vw;
+  height: 54vh;
   background-size: cover;
-  border-radius: 15px;;
-  border: solid 5px #6F62A0;
+  border-radius: 1.4vh;;
+  border: solid .5vh #6F62A0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 
 .arrows {
@@ -56,32 +57,32 @@
   bottom: 50px;
 }
 .left-arrow {
-font-size: 20px;
+font-size: 2vh;
 color: white;
 background:none;
 border: none;
 cursor: pointer;
 position: relative;
-right: 170px;
-bottom: 170px;
+right: 29vh;
+bottom: 23vh;
 }
 
 .right-arrow {
-  font-size: 20px;
+  font-size: 2vh;
   color: white;
   background:none;
   border: none;
   cursor: pointer;
   position: relative;
-left: 170px;
-bottom: 170px;
+left: 29vh;
+bottom: 23vh;
 }
 
 .audio-container {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  width: 500px;
-  height: 120px;
+  width: 40vw;
+  height: 15vh;
   color: white;
 font-weight: bold;
 overflow: hidden;
@@ -91,6 +92,7 @@ background-color: #6F62A0;
 padding: 30px;
 border-radius: 25px;
 font-size: 12px;
+box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 
 .audio-container::-webkit-scrollbar {
@@ -117,7 +119,7 @@ font-size: 12px;
 }
 
 .components {
-  height: 1000px;
+  height: 100vh;
 display:flex;
 justify-content: space-evenly;
 margin-top: 30px;
@@ -141,14 +143,15 @@ margin-top: 30px;
 }
 
 .note-wrapper {
-  width: 450px;
-  height:623px;
+  width: 61vh;
+  height:81vh;
   background-color:#6F62A0;
   border-radius: 20px;
   color: white;
   font-size: 12px;
   overflow: hidden;
 overflow-y: scroll;
+box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 
 .note-wrapper::-webkit-scrollbar {
@@ -173,48 +176,53 @@ overflow-y: scroll;
   border-radius: 10px;
   cursor: pointer;
   position: relative;
-  left: 175px;
-  bottom: 33px;
+  left: 30vh;
+  bottom: 50vh;
   font-weight: bold;
 }
 
 .add {
-  width: 40px;
-  font-size: 18px;
+  width: 3.3vw;
+  font-size: 3.3vh;
   font-weight: bold;
   color: white;
   border: none;
   background:rgb(0, 166, 0);
-  padding: 10px;
-  border-radius: 30px;
+  padding: 1vh;
+  border-radius: 3vh;
   cursor: pointer;
   position: relative;
-  left:375px;
+  left: 50vh;
+
   bottom: 0px;
 }
 
 .input-text {
-width:300px;
-padding: 20px;
+width:42vh;
+padding: 1.9vh;
 border-radius: 20px;
 border-style: none;
 position: relative;
-right: 55px;
-margin: 30px;
+right: 8vh;
+margin: 2vh;
+margin-bottom: 6vh;
+
+box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 
 .text {
-  width: 280px;
+  width: 40vh;
   font-weight: bold;
   border-radius: 20px;
   background-color:#bea6d9;
   position: relative;
   left: 20px;
   padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .edit-text {
-  width: 280px;
+  width: 40vh;
   font-weight: bold;
   border-radius: 20px;
   background-color:#bea6d9;
@@ -270,7 +278,7 @@ margin: 30px;
   font-weight: bold;
   color: white;
   border: none;
-  background-color:rgb(203, 19, 19);
+  background-color:rgb(176, 19, 19);
   padding: 7px;
   border-radius: 15px;
   cursor: pointer;

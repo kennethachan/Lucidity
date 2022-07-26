@@ -65,7 +65,7 @@ function Note(props) {
       </button>
       <input
         className="input-text"
-        placeholder={"write here"}
+        placeholder={"w r i t e  h e r e"}
         value={text}
         onChange={(e) => setText(e.target.value)}
       ></input>
