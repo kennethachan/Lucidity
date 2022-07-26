@@ -1,6 +1,8 @@
 import React from "react"
 import { useState, createRef } from "react"
-
+import editButton from "../buttons/edit.png"
+import deleteButton from "../buttons/delete.png"
+import saveButton from "../buttons/save.png"
 export default function NoteText({ text, remove, update }) {
   const [edit, setEdit] = useState(false)
 
@@ -17,25 +19,23 @@ export default function NoteText({ text, remove, update }) {
         <>
           <input defaultValue={text} className="edit-text" ref={input} />
           <div className="icons">
-            <button className="save" onClick={saveText}>
-              save
-            </button>
+            <img src={saveButton} className="save" onClick={saveText}></img>
           </div>
         </>
       ) : (
         <>
           <div className="text">{text}</div>
           <div className="icons">
-            <button className="edit" onClick={() => setEdit(true)}>
-              edit
-            </button>
+            <img
+              src={editButton}
+              className="edit"
+              onClick={() => setEdit(true)}
+            ></img>
           </div>
         </>
       )}
 
-      <button className="delete" onClick={remove}>
-        X
-      </button>
+      <img src={deleteButton} className="delete" onClick={remove}></img>
     </div>
   )
 }

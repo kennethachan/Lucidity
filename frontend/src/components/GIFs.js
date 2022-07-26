@@ -18,6 +18,12 @@ import coke from "../gifs/coke.gif"
 import tie from "../gifs/tie.gif"
 import typing from "../gifs/typing.gif"
 import drink from "../gifs/drink.gif"
+import cat from "../gifs/cat.gif"
+import lips from "../gifs/lips.gif"
+import coding from "../gifs/coding.gif"
+import bebop from "../gifs/bebop.gif"
+import stars from "../gifs/stars.gif"
+import char from "../gifs/char.gif"
 
 const GifsSlideShow = ({ imgs }) => {
   const [image, setImage] = useState(0)
@@ -62,6 +68,12 @@ function GIFs(props) {
     <div>
       <GifsSlideShow
         imgs={[
+          coding,
+          cat,
+          lips,
+          bebop,
+          stars,
+          char,
           bike,
           breezy,
           commute,

@@ -2,6 +2,7 @@ import React from "react"
 import { useState, useEffect } from "react"
 import axios from "axios"
 import NoteText from "./NoteText"
+import add from "../buttons/add.png"
 
 const URL = "http://localhost:3001"
 
@@ -60,9 +61,7 @@ function Note(props) {
   return (
     <div className="note-wrapper">
       <h3 className="write">write it down</h3>
-      <button className="add" onClick={addText}>
-        +
-      </button>
+      <img onClick={addText} className="add" src={add}></img>
       <input
         className="input-text"
         placeholder={"w r i t e  h e r e"}

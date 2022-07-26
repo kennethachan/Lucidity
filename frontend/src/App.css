@@ -46,7 +46,7 @@
 }
 
 .mainImg {
-  width: 400px;
+  width: 520px;
   height: 400px;
   background-size: cover;
   border-radius: 15px;;
@@ -65,7 +65,7 @@ background:none;
 border: none;
 cursor: pointer;
 position: relative;
-right: 170px;
+right: 235px;
 bottom: 170px;
 }
 
@@ -84,7 +84,7 @@ bottom: 170px;
   border: none;
   cursor: pointer;
   position: relative;
-left: 170px;
+left: 235px;
 bottom: 170px;
 }
 
@@ -99,7 +99,7 @@ bottom: 170px;
 .audio-container {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  width: 500px;
+  width: 473px;
   height: 120px;
   color: white;
 font-weight: bold;
@@ -143,15 +143,6 @@ justify-content: space-evenly;
 margin-top: 30px;
 }
 
-.gif-audio {
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.notePad {
-  margin-left:auto;
-  margin-right:auto;
-}
 
 .audio-component {
 
@@ -182,6 +173,7 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   padding: 20px;
   padding-bottom: 10px;
   letter-spacing: 10px;
+  text-shadow: rgba(0, 0, 0, 0.9) 0px 3px 8px;
 }
 
 .remove-note {
@@ -199,18 +191,15 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .add {
-  width: 40px;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  border: none;
-  background:rgb(0, 166, 0);
-  padding: 10px;
-  border-radius: 30px;
+  width: 50px;
   cursor: pointer;
   position: relative;
-  left:375px;
-  bottom: 0px;
+  left:359px;
+  top: 19px;
+}
+
+.add:hover {
+  width: 60px;
 }
 
 .input-text {
@@ -219,8 +208,10 @@ padding: 20px;
 border-radius: 20px;
 border-style: none;
 position: relative;
-right: 55px;
+right: 61px;
 margin: 30px;
+margin-right: 0px;
+margin-left: 0px;
 box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
@@ -258,48 +249,39 @@ height: auto;
 }
 
 .edit {
-  width: 40px;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  border: none;
-  background-color:rgb(0, 166, 0);
-  padding: 7px;
-  border-radius: 15px;
+  width: 23px;
   cursor: pointer;
   position: relative;
-  left: 140px;
+  left: 157px;
   bottom: 32px;
 }
 
+.edit:hover{
+  width:27px;
+}
+
 .save {
-  width: 50px;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  border: none;
-  background-color:rgb(0, 166, 0);
-  padding: 7px;
-  border-radius: 15px;
+  width: 23px;
   cursor: pointer;
   position: relative;
-  left: 140px;
-  bottom: 33px;
+  left: 157px;
+  bottom: 32px;
+}
+
+.save:hover{
+  width:27px;
 }
 
 .delete {
-  width: 40px;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  border: none;
-  background-color:rgb(203, 19, 19);
-  padding: 7px;
-  border-radius: 15px;
+  width: 23px;
   cursor: pointer;
   position: relative;
   left: 190px;
-  bottom: 60px;
+  bottom: 57px;
+}
+
+.delete:hover{
+  width:27px;
 }
 
 .landing-background {
