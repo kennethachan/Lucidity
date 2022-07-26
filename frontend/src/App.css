@@ -1,5 +1,3 @@
-
-
 *{
   padding: 0;
   margin: 0;
@@ -16,8 +14,8 @@
   text-align: right;
   font-weight: bold;
   color: white;
-  padding: 1.3vh;
-  padding-bottom:.13vh;
+  padding: 10px;
+  padding-bottom:1px;
   margin-bottom: 0px;
 }
 
@@ -29,7 +27,7 @@
 
 .landing-logo {
   text-align: left;
-  padding-bottom:2.4vh;
+  padding-bottom:18px;
   margin:0;
 }
 
@@ -37,19 +35,23 @@
   padding-bottom: 0;
   color: white;
   text-decoration: none;
-  padding-right: 2vh;
+  padding-right: 20px;
   position: relative;
-  bottom: 2.5vh;
+  bottom: 25px;
+}
 
+.nav:hover {
+  text-shadow: rgba(0, 0, 0, 0.6) 0px 15px 12px;
+  color: black;
 }
 
 .mainImg {
-  width: 33vw;
-  height: 54vh;
+  width: 400px;
+  height: 400px;
   background-size: cover;
-  border-radius: 1.4vh;;
-  border: solid .5vh #6F62A0;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+  border-radius: 15px;;
+  border: solid 5px #6F62A0;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .arrows {
@@ -57,32 +59,48 @@
   bottom: 50px;
 }
 .left-arrow {
-font-size: 2vh;
+font-size: 20px;
 color: white;
 background:none;
 border: none;
 cursor: pointer;
 position: relative;
-right: 29vh;
-bottom: 23vh;
+right: 170px;
+bottom: 170px;
+}
+
+.left-arrow:hover {
+  text-shadow: rgba(0, 0, 0, 0.9) 0px 15px 12px;
+}
+
+.left-arrow:active {
+  color: black;
 }
 
 .right-arrow {
-  font-size: 2vh;
+  font-size: 20px;
   color: white;
   background:none;
   border: none;
   cursor: pointer;
   position: relative;
-left: 29vh;
-bottom: 23vh;
+left: 170px;
+bottom: 170px;
+}
+
+.right-arrow:hover {
+  text-shadow: rgba(0, 0, 0, 0.9) 0px 15px 12px;
+}
+
+.right-arrow:active {
+  color: black;
 }
 
 .audio-container {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  width: 40vw;
-  height: 15vh;
+  width: 500px;
+  height: 120px;
   color: white;
 font-weight: bold;
 overflow: hidden;
@@ -92,11 +110,11 @@ background-color: #6F62A0;
 padding: 30px;
 border-radius: 25px;
 font-size: 12px;
-box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .audio-container::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
+  display: none;
 }
 
 .player {
@@ -119,7 +137,7 @@ box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 
 .components {
-  height: 100vh;
+  height: 1000px;
 display:flex;
 justify-content: space-evenly;
 margin-top: 30px;
@@ -143,19 +161,19 @@ margin-top: 30px;
 }
 
 .note-wrapper {
-  width: 61vh;
-  height:81vh;
+  width: 450px;
+  height:623px;
   background-color:#6F62A0;
   border-radius: 20px;
   color: white;
   font-size: 12px;
   overflow: hidden;
 overflow-y: scroll;
-box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .note-wrapper::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
+  display: none; 
 }
 
 .write {
@@ -164,7 +182,6 @@ box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
   padding: 20px;
   padding-bottom: 10px;
   letter-spacing: 10px;
-
 }
 
 .remove-note {
@@ -176,53 +193,51 @@ box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
   border-radius: 10px;
   cursor: pointer;
   position: relative;
-  left: 30vh;
-  bottom: 50vh;
+  left: 175px;
+  bottom: 33px;
   font-weight: bold;
 }
 
 .add {
-  width: 3.3vw;
-  font-size: 3.3vh;
+  width: 40px;
+  font-size: 18px;
   font-weight: bold;
   color: white;
   border: none;
   background:rgb(0, 166, 0);
-  padding: 1vh;
-  border-radius: 3vh;
+  padding: 10px;
+  border-radius: 30px;
   cursor: pointer;
   position: relative;
-  left: 50vh;
-
+  left:375px;
   bottom: 0px;
 }
 
 .input-text {
-width:42vh;
-padding: 1.9vh;
+width:300px;
+padding: 20px;
 border-radius: 20px;
 border-style: none;
 position: relative;
-right: 8vh;
-margin: 2vh;
-margin-bottom: 6vh;
-
-box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+right: 55px;
+margin: 30px;
+box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .text {
-  width: 40vh;
+  width: 280px;
   font-weight: bold;
   border-radius: 20px;
   background-color:#bea6d9;
   position: relative;
   left: 20px;
   padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
 }
 
 .edit-text {
-  width: 40vh;
+  width: 280px;
+height: auto;
   font-weight: bold;
   border-radius: 20px;
   background-color:#bea6d9;
@@ -278,7 +293,7 @@ box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
   font-weight: bold;
   color: white;
   border: none;
-  background-color:rgb(176, 19, 19);
+  background-color:rgb(203, 19, 19);
   padding: 7px;
   border-radius: 15px;
   cursor: pointer;
@@ -289,7 +304,7 @@ box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 
 .landing-background {
   background-color:#bea6d9;
-  height: 1000px;
+  height: 1100px;
 }
 
 .landing-image {
@@ -310,6 +325,7 @@ box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
   border-radius: 30px;
   position: relative;
   bottom: 400px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 15px 12px;
 }
 .email {
 color: white;
@@ -349,6 +365,11 @@ border: none;
  text-decoration: none;
 }
 
+.login-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  color: white;
+}
+
 .register-btn {
   width: 80px;
   padding: 5px;
@@ -362,6 +383,10 @@ border: none;
    text-decoration: none;
 }
 
+.register-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  color: white;
+}
 .back-btn {
   width: 80px;
   padding: 5px;
@@ -374,3 +399,4 @@ border: none;
    margin-bottom: 10px;
    text-decoration: none;
 }
+
