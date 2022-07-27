@@ -25,7 +25,6 @@ import coding from "../gifs/coding.gif"
 import bebop from "../gifs/bebop.gif"
 import stars from "../gifs/stars.gif"
 import char from "../gifs/char.gif"
-import Note from "./Note"
 
 const url = "http://localhost:3001"
 
@@ -68,7 +67,7 @@ const GifsSlideShow = ({ imgs }) => {
 }
 
 function GIFs(props) {
-  const [userImage, setUserImage] = useState("")
+  const [URL, setURL] = useState("")
   useEffect(() => {
     getImages()
   }, [])
@@ -76,19 +75,31 @@ function GIFs(props) {
   const getImages = async () => {
     const res = await axios.get(`${url}/get-image`)
     console.log(res.data.images)
-    console.log(userImage)
+    console.log(URL)
 
-    userImage.map((imgs) => {
+    URL.map((imgs) => {
       console.log(imgs.URL)
-      setUserImage(imgs.URL)
+      setURL(imgs.URL)
     })
+  }
+
+  const addImages = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await axios.post(`${url}/new-image`, { URL }).then((res) => {
+        console.log(res)
+        getImages()
+      })
+    } catch (error) {
+      alert("Please use a different GIF")
+    }
   }
 
   return (
     <div>
       <GifsSlideShow
         imgs={[
-          userImage,
+          URL,
           coding,
           cat,
           lips,
@@ -116,10 +127,16 @@ function GIFs(props) {
           drink,
         ]}
       />
-      <form>
-        <input type="text" placeholder="Paste GIF Image Address"></input>
-        <button value="submit">Add GIF</button>
+      <form onSubmit={(e) => addImages(e)}>
+        <input
+          type="text"
+          placeholder="Paste GIF Image Address"
+          // value={userImage}
+          onChange={(e) => setURL(e.target.value)}
+        ></input>
+        <button type="submit">Add GIF</button>
       </form>
+      <button>delete</button>
     </div>
   )
 }
