@@ -16,4 +16,10 @@ router.get("/get-users/:email-:password", controllers.getUser)
 
 router.post("/new-user", controllers.newUser)
 
+router.post("/new-image", controllers.newImage)
+
+router.get("/get-image", controllers.getImage)
+
+router.delete("/delete-image/:Id", controllers.deleteImage)
+
 module.exports = router

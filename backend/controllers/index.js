@@ -1,5 +1,6 @@
 const Notes = require("../models/Notes")
 const Users = require("../models/Users")
+const Images = require("../models/Images")
 
 const getNote = async (req, res) => {
   try {
@@ -64,6 +65,37 @@ const newUser = async (req, res) => {
   }
 }
 
+const newImage = async (req, res) => {
+  try {
+    const { URL } = req.body
+    const images = await Images.create({ URL })
+    return res.status(201).send("Image Added")
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const getImage = async (req, res) => {
+  try {
+    const images = await Images.find()
+    return res.status(200).json({ images })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteImage = async (req, res) => {
+  try {
+    const deleteImg = await Images.findByIdAndDelete(req.params.Id)
+    if (deleteImg) {
+      return res.status(200).send("Image deleted")
+    }
+    throw new Error("Image not found")
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getNote,
   addNote,
@@ -71,4 +103,7 @@ module.exports = {
   updateNotes,
   getUser,
   newUser,
+  newImage,
+  getImage,
+  deleteImage,
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import axios from "axios"
 import bike from "../gifs/bike.gif"
 import breezy from "../gifs/breezy-night.gif"
 import commute from "../gifs/commute.gif"
@@ -25,8 +26,11 @@ import bebop from "../gifs/bebop.gif"
 import stars from "../gifs/stars.gif"
 import char from "../gifs/char.gif"
 
+const URL = "http://localhost:3001"
+
 const GifsSlideShow = ({ imgs }) => {
   const [image, setImage] = useState(0)
+  const [userImage, setUserImage] = useState("")
 
   useEffect(() => {
     setImage(0)
