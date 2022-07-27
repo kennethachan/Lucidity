@@ -26,7 +26,7 @@ import bebop from "../gifs/bebop.gif"
 import stars from "../gifs/stars.gif"
 import char from "../gifs/char.gif"
 
-const url = "http://localhost:3001"
+const API = "http://localhost:3001"
 
 const GifsSlideShow = ({ imgs }) => {
   const [image, setImage] = useState(0)
@@ -68,70 +68,72 @@ const GifsSlideShow = ({ imgs }) => {
 
 function GIFs(props) {
   const [URL, setURL] = useState("")
+  const [allImgs, setAllImgs] = useState([
+    coding,
+    cat,
+    lips,
+    bebop,
+    stars,
+    char,
+    bike,
+    breezy,
+    commute,
+    creamer,
+    crescent,
+    flowers,
+    mirror,
+    night,
+    nightdrive,
+    rose,
+    shoe,
+    shoetwo,
+    tea,
+    nails,
+    beach,
+    coke,
+    tie,
+    typing,
+    drink,
+  ])
+
   useEffect(() => {
     getImages()
   }, [])
 
   const getImages = async () => {
-    const res = await axios.get(`${url}/get-image`)
+    const res = await axios.get(`${API}/get-image`)
     console.log(res.data.images)
-    console.log(URL)
 
-    URL.map((imgs) => {
-      console.log(imgs.URL)
-      setURL(imgs.URL)
-    })
+    const imgURLs = res.data.images.map((img) => img.URL)
+
+    setAllImgs([...allImgs, ...imgURLs])
   }
 
   const addImages = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post(`${url}/new-image`, { URL }).then((res) => {
-        console.log(res)
-        getImages()
+      const res = await axios.post(`${API}/new-image`, { URL }).then((res) => {
+        setAllImgs([...allImgs, URL])
       })
     } catch (error) {
       alert("Please use a different GIF")
     }
   }
 
+  // const deleteImages = async (_id) => {
+  //   const res = await axios
+  //     .delete(`${API}/delete-image/${_id}`)
+  //     .then((_res) => getImages())
+  //     .catch((error) => console.log(error))
+  // }
+
   return (
     <div>
-      <GifsSlideShow
-        imgs={[
-          URL,
-          coding,
-          cat,
-          lips,
-          bebop,
-          stars,
-          char,
-          bike,
-          breezy,
-          commute,
-          creamer,
-          crescent,
-          flowers,
-          mirror,
-          night,
-          nightdrive,
-          rose,
-          shoe,
-          shoetwo,
-          tea,
-          nails,
-          beach,
-          coke,
-          tie,
-          typing,
-          drink,
-        ]}
-      />
+      <GifsSlideShow imgs={allImgs} />
       <form onSubmit={(e) => addImages(e)}>
         <input
           type="text"
           placeholder="Paste GIF Image Address"
-          // value={userImage}
           onChange={(e) => setURL(e.target.value)}
         ></input>
         <button type="submit">Add GIF</button>
