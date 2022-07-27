@@ -25,6 +25,8 @@ import coding from "../gifs/coding.gif"
 import bebop from "../gifs/bebop.gif"
 import stars from "../gifs/stars.gif"
 import char from "../gifs/char.gif"
+import addBtn from "../buttons/add.png"
+import deleteBtn from "../buttons/delete.png"
 
 const API = "http://localhost:3001"
 
@@ -130,15 +132,19 @@ function GIFs(props) {
   return (
     <div>
       <GifsSlideShow imgs={allImgs} />
-      <form onSubmit={(e) => addImages(e)}>
+      <form className="GIF-form" onSubmit={(e) => addImages(e)}>
         <input
+          className="url-address"
           type="text"
-          placeholder="Paste GIF Image Address"
+          placeholder="  Paste GIF Image Address"
           onChange={(e) => setURL(e.target.value)}
-        ></input>
-        <button type="submit">Add GIF</button>
+        ></input>{" "}
+        <br />
+        <button className="addgif-btn" type="submit">
+          add gif
+        </button>
+        <button className="deletegif-btn">delete</button>
       </form>
-      <button>delete</button>
     </div>
   )
 }
