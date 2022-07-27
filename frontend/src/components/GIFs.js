@@ -25,12 +25,12 @@ import coding from "../gifs/coding.gif"
 import bebop from "../gifs/bebop.gif"
 import stars from "../gifs/stars.gif"
 import char from "../gifs/char.gif"
+import Note from "./Note"
 
-const URL = "http://localhost:3001"
+const url = "http://localhost:3001"
 
 const GifsSlideShow = ({ imgs }) => {
   const [image, setImage] = useState(0)
-  const [userImage, setUserImage] = useState("")
 
   useEffect(() => {
     setImage(0)
@@ -68,10 +68,27 @@ const GifsSlideShow = ({ imgs }) => {
 }
 
 function GIFs(props) {
+  const [userImage, setUserImage] = useState("")
+  useEffect(() => {
+    getImages()
+  }, [])
+
+  const getImages = async () => {
+    const res = await axios.get(`${url}/get-image`)
+    console.log(res.data.images)
+    console.log(userImage)
+
+    userImage.map((imgs) => {
+      console.log(imgs.URL)
+      setUserImage(imgs.URL)
+    })
+  }
+
   return (
     <div>
       <GifsSlideShow
         imgs={[
+          userImage,
           coding,
           cat,
           lips,
@@ -99,6 +116,10 @@ function GIFs(props) {
           drink,
         ]}
       />
+      <form>
+        <input type="text" placeholder="Paste GIF Image Address"></input>
+        <button value="submit">Add GIF</button>
+      </form>
     </div>
   )
 }
