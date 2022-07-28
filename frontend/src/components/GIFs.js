@@ -26,7 +26,6 @@ import bebop from "../gifs/bebop.gif"
 import stars from "../gifs/stars.gif"
 import char from "../gifs/char.gif"
 import addBtn from "../buttons/add.png"
-import deleteBtn from "../buttons/delete.png"
 
 const API = "http://localhost:3001"
 
@@ -70,7 +69,7 @@ const GifsSlideShow = ({ imgs }) => {
 
 function GIFs(props) {
   const [URL, setURL] = useState("")
-  const [addedImg, setAddedImg] = useState([])
+  const [addedImg, setAddedImg] = useState("")
   const [allImgs, setAllImgs] = useState([
     coding,
     cat,
@@ -105,13 +104,10 @@ function GIFs(props) {
 
   const getImages = async () => {
     const res = await axios.get(`${API}/get-image`)
-    console.log(res.data.images)
-
     const imgURLs = res.data.images.map((img) => img.URL)
     setAllImgs([...allImgs, ...imgURLs])
-    setURL("")
     setAddedImg(res.data.images)
-    // console.log(addedImg[0]._id)
+    setURL("")
   }
 
   const addImage = async (e) => {
@@ -120,6 +116,7 @@ function GIFs(props) {
       const res = await axios.post(`${API}/new-image`, { URL }).then((res) => {
         setAllImgs([...allImgs, URL])
         setURL("")
+        getImages()
       })
     } catch (error) {
       alert("Please use a different GIF")
@@ -129,8 +126,13 @@ function GIFs(props) {
   const deleteImage = async (_id) => {
     const res = await axios
       .delete(`${API}/delete-image/${_id}`)
+      .then((res) => {
+        setAddedImg([])
+        allImgs.pop()
+        setURL("")
+        getImages()
+      })
       .catch((error) => console.log(error))
-    getImages()
   }
 
   return (
@@ -140,6 +142,7 @@ function GIFs(props) {
         <input
           className="url-address"
           type="text"
+          value={URL}
           placeholder="  Paste GIF Image Address"
           onChange={(e) => setURL(e.target.value)}
         ></input>{" "}
