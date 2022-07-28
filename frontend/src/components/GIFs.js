@@ -70,6 +70,7 @@ const GifsSlideShow = ({ imgs }) => {
 
 function GIFs(props) {
   const [URL, setURL] = useState("")
+  const [addedImg, setAddedImg] = useState([])
   const [allImgs, setAllImgs] = useState([
     coding,
     cat,
@@ -107,32 +108,35 @@ function GIFs(props) {
     console.log(res.data.images)
 
     const imgURLs = res.data.images.map((img) => img.URL)
-
     setAllImgs([...allImgs, ...imgURLs])
+    setURL("")
+    setAddedImg(res.data.images)
+    // console.log(addedImg[0]._id)
   }
 
-  const addImages = async (e) => {
+  const addImage = async (e) => {
     e.preventDefault()
     try {
       const res = await axios.post(`${API}/new-image`, { URL }).then((res) => {
         setAllImgs([...allImgs, URL])
+        setURL("")
       })
     } catch (error) {
       alert("Please use a different GIF")
     }
   }
 
-  // const deleteImages = async (_id) => {
-  //   const res = await axios
-  //     .delete(`${API}/delete-image/${_id}`)
-  //     .then((_res) => getImages())
-  //     .catch((error) => console.log(error))
-  // }
+  const deleteImage = async (_id) => {
+    const res = await axios
+      .delete(`${API}/delete-image/${_id}`)
+      .catch((error) => console.log(error))
+    getImages()
+  }
 
   return (
     <div>
       <GifsSlideShow imgs={allImgs} />
-      <form className="GIF-form" onSubmit={(e) => addImages(e)}>
+      <form className="GIF-form" onSubmit={(e) => addImage(e)}>
         <input
           className="url-address"
           type="text"
@@ -141,10 +145,15 @@ function GIFs(props) {
         ></input>{" "}
         <br />
         <button className="addgif-btn" type="submit">
-          add gif
+          add
         </button>
-        <button className="deletegif-btn">delete</button>
       </form>
+      <button
+        className="deletegif-btn"
+        onClick={() => deleteImage(addedImg[0]._id)}
+      >
+        delete
+      </button>
     </div>
   )
 }

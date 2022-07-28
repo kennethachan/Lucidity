@@ -112,7 +112,7 @@ border-radius: 25px;
 font-size: 12px;
 box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 position: relative;
-bottom: 10px;
+bottom: 35px;
 }
 
 .audio-container::-webkit-scrollbar {
@@ -396,7 +396,7 @@ border: none;
   padding: 10px;
   border-radius: 20px;
   position: relative;
-  bottom: 20px;
+  bottom: 25px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -411,7 +411,7 @@ border: none;
 .addgif-btn {
   width: 70px;
   background-color:#bea6d9;
-  color: white;
+  color: black;
   font-weight: bold;
   padding: 4px;
   border-style: none;
@@ -421,7 +421,7 @@ border: none;
 }
 
 .addgif-btn:hover {
-  color: black;
+  color: white;
   box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
@@ -430,15 +430,18 @@ border: none;
 .deletegif-btn {
   width: 70px;
   background-color:#bea6d9;
-  color: white;
+  color: black;
   font-weight: bold;
   padding: 4px;
   border-style: none;
   border-radius: 10px;
   cursor: pointer;
+  position: relative;
+  bottom: 58px;
+  left: 60px;
 }
 
 .deletegif-btn:hover {
-  color: black;
+  color: white;
   box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
