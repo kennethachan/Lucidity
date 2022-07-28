@@ -1,6 +1,6 @@
 # Lucidity
 
-### Date: 7/23/2022
+### Date: 7/28/2022
 
 ### By: Kenneth Chan
 
@@ -14,7 +14,7 @@
 
 ### **_Description_**
 
-#### For my Unit 2 project I propose to create a "lofi - anime" inspired productivity page. There has been a strong popularity in youtube livestreams featuring lofi hip hop/slowed and reverbed mixes with anime as the visual. Many people have used these playlists to help them study or work on tedious tasks. I wanted to bring this together and create a page that lets the user choose a GIF and music to create a relaxing/positive environment to be productive or decompress and write down whats on their mind.
+#### Lucidity is a "lofi anime" productivity app inspired from the popular Youtube 24/7 livestream "lofi hip hop radio - beats to relax/study to" as well as the "slowed and reverbed" mixes on Youtube and SoundCloud. These playlists and anime visuals have helped many people study, perform a tedious task or relax and clear their mind. This website brings these ideas together and creates a relaxing/positive environment to be productive or decompress. The website has (3) main features: a notepad where the user can add,edit and delete notes. A GIF image slider with preset GIFs and allows the user to add and delete new GIFs. A premade playlist lets the user select a playlist/track from SoundCloud.
 
 ---
 
@@ -27,32 +27,38 @@
 
 ---
 
-### **_MVP_**
+### **Getting Started**
 
-#### The user is greeted with a landing page to either login or register. To register, the user will need to input an email address and a password. After registering/logging in the user will enter the homepage.
+#### The landing page will prompt the user to either "login" or "register". If an account has not been created, the user would click "register" which will bring the user to the registration page. Once an email and password has been entered, the page will redirect the user back to the login page. If an email account has already been used to create an account, an alert with let the user now to use a different email address. Once directed back to the login page, the user can now enter in their credentials. If an invalid email or password is entered, an alert is send that their credentials do not match what has been created in the database.
 
-#### The homepage has (3) main features:
-
-#### -In the center will be a static slideshow with anime GIFs to choose from. You will be able to click and arrow to move back and forth between the GIFs depending on your mood.
-
-#### -To the right will be a notepad that has full CRUD operations. The note pad will be able to be scrollable so a plethra of notes can be be made without taking too much of the screen.
-
-#### -To the left will be the audio component. The user will be able to choose from a pre-selected music selection to help them concentrate/relax while focusing on their tasks.
-
----
-
-### **_Post MVP_**
-
-#### Enable the user to add and delete pictures/GIFs to the slideshow
-
-#### Enable the user choose between a static slideshow or a moving slideshow
-
-#### Enable the user to add and delete music from the playlist
+#### -After successfully logging in, the user will be brought to the homepage. The homepage has (3) Main features: Notepad, GIF image slider and a SoundCloud playlist selection.
 
 ---
 
 ### **_Screenshots_**
 
+## ![Image](/Screenshots/landing.png)
+
+## ![Image](/Screenshots/register.png)
+
+## ![Image](/Screenshots/home.png)
+
 ---
 
 ### **_Credits_**
+
+#### Fragments: [reactjs.org](https://reactjs.org/docs/fragments.html)
+
+#### JavaScript Array unshift(): [W3 Schools](<https://www.w3schools.com/jsref/jsref_unshift.asp#:~:text=The%20unshift()%20method%20adds,method%20overwrites%20the%20original%20array.>)
+
+#### Array.prototype.shift(): [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+
+#### Hipster Ipsum: [Hipster Ipsum](https://hipsum.co/?paras=1&type=hipster-centric&start-with-lorem=1)
+
+#### A complete Guide to Grid: [CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/#aa-special-units-functions)
+
+#### Mongoose | findByIdAndUpdate() Function: [GeeksforGeeks](https://www.geeksforgeeks.org/mongoose-findbyidandupdate-function/)
+
+#### Uncontrolled Components: [reactjs.org](https://reactjs.org/docs/uncontrolled-components.html)
+
+#### Image Slider: [Youtube](https://www.youtube.com/watch?v=-VKXgsrLEjw)
