@@ -6,7 +6,7 @@ function Audio(props) {
   return (
     <div>
       <div className="audio-container">
-        {/* <p className="audio-name">japanese jazz when driving on a warm night</p>
+        <p className="audio-name">japanese jazz when driving on a warm night</p>
         <iframe
           className="player"
           width="100px"
@@ -70,7 +70,39 @@ function Audio(props) {
           frameborder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/802758238&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-        ></iframe> */}
+        ></iframe>
+        <p className="audio-name">Steamy Situation Mix</p>
+        <iframe
+          className="player"
+          width="100px"
+          height="100px"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/715464589&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        ></iframe>
+        <p className="audio-name">King Krule Hey World!</p>
+        <iframe
+          className="player"
+          width="100px"
+          height="100px"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/391761444&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        ></iframe>
+        <p className="audio-name">
+          Touched briefly by two hands in an empty room
+        </p>
+        <iframe
+          className="player"
+          width="100px"
+          height="100px"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/116738757&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        ></iframe>
       </div>
     </div>
   )
