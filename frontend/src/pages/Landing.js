@@ -1,17 +1,19 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { useState, useEffect, useContext } from "react"
+import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
 function Landing(props) {
-  const image = require("../gifs/mirror.gif")
+  const image = require("../gifs/mirror.gif") //background image
   const URL = "http://localhost:3001"
   let navigate = useNavigate()
-
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  //If email & password input value matches email and password in database pass, navigate to home page
+  //If password does not match send an alert
+  //input values are set in state and used to complete the URL to find user
   const login = async (e) => {
     e.preventDefault()
     const res = await axios
@@ -31,6 +33,8 @@ function Landing(props) {
       })
   }
 
+  //Form is used to grab values of email and password input when submitted with a button and triggers login function
+  //If the user does not have an account they can click "register" which is linked to the register page
   return (
     <div className="landing-background">
       <div className="App-header">

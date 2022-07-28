@@ -1,5 +1,7 @@
 import React from "react"
 
+//Below are soundcloud iFrame embed codes.  Sizing adjustments were made to fit interface.
+//Major limitation - Encountered "reaching maximum play limits" when using embed code
 function Audio(props) {
   return (
     <div>

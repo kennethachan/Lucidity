@@ -5,6 +5,7 @@ import Header from "../components/Header"
 import Audio from "../components/Audio"
 import Note from "../components/Note"
 
+//Home.js is reserved to display all components
 function Home(props) {
   return (
     <div className="App">

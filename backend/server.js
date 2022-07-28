@@ -16,8 +16,7 @@ app.use(logger("dev"))
 app.use(Parser.json())
 app.use(routes)
 
-// app.use(bodyParser.urlencoded({ extended: true }))
-
+//Code below from Symentix.com to help debug 500 errors in NodeJS,ExpressJS application
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message

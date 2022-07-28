@@ -2,6 +2,7 @@ const Notes = require("../models/Notes")
 const Users = require("../models/Users")
 const Images = require("../models/Images")
 
+//Controller functions for notepad
 const getNote = async (req, res) => {
   try {
     const notes = await Notes.find()
@@ -46,6 +47,7 @@ const updateNotes = async (req, res) => {
   }
 }
 
+//Controller functions for login/register user
 const getUser = async (req, res) => {
   try {
     const users = await Users.findOne()
@@ -65,6 +67,7 @@ const newUser = async (req, res) => {
   }
 }
 
+//Controller functions for user added GIFs
 const newImage = async (req, res) => {
   try {
     const { URL } = req.body

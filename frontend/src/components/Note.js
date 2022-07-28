@@ -11,15 +11,16 @@ function Note(props) {
   const [note, setNote] = useState([])
   const [update, setUpdate] = useState("")
 
-  const getNotes = async () => {
-    const res = await axios.get(`${URL}/get-note`)
-    setNote(res.data.notes)
-  }
-
   useEffect(() => {
     getNotes()
   }, [])
 
+  //Notes are mapped onload using useEffect.  Function is used inside all other functions below to remap after any update is made.
+  const getNotes = async () => {
+    const res = await axios.get(`${URL}/get-note`)
+    setNote(res.data.notes)
+  }
+  //A note is selected by Id and deleted, page is updated using getNotes
   const deleteText = async (_id) => {
     const res = await axios
       .delete(`${URL}/delete-note/${_id}`)
@@ -27,6 +28,7 @@ function Note(props) {
       .catch((error) => console.log(error))
   }
 
+  //A note is selected by Id and updated, page is updated using getNotes.  See NoteText component
   const updateText = async (_id, text) => {
     const res = await axios
       .put(`${URL}/update-note/${_id}`, { text })
@@ -34,27 +36,17 @@ function Note(props) {
       .catch((error) => console.log(error))
   }
 
+  //A note is added by grabbing the input value and setting it, text ecapsulate the request body that we are parsing
+  //Text state is reset and page is updated by call getNotes
   const addText = async () => {
-    if (update === "") {
-      const res = await axios
-        .post(`${URL}/add-note/`, { text })
-        .then((res) => {
-          console.log(res.data)
-          setText("")
-          getNotes()
-        })
-        .catch((error) => console.log(error))
-    } else {
-      const res = await axios
-        .post(`${URL}/add-note/`, { _id: update, text })
-        .then((res) => {
-          console.log(res.data)
-          setText("")
-          setUpdate("")
-          getNotes()
-        })
-        .catch((error) => console.log(error))
-    }
+    const res = await axios
+      .post(`${URL}/add-note/`, { text })
+      .then((res) => {
+        console.log(res.data)
+        setText("")
+        getNotes()
+      })
+      .catch((error) => console.log(error))
   }
 
   return (
@@ -74,8 +66,8 @@ function Note(props) {
               <NoteText
                 key={text._id}
                 text={text.text}
-                remove={() => deleteText(text._id)}
-                update={(updatedText) => updateText(text._id, updatedText)}
+                remove={() => deleteText(text._id)} //remove will trigger delete function with text's state id as the parameter.  see NoteText
+                update={(updatedText) => updateText(text._id, updatedText)} //update will trigger the update function with text's state id and input value. See NoteText
               />
             ))}
           </div>

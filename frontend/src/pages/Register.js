@@ -1,21 +1,22 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import { useState, useContext } from "react"
+import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function Register(props) {
-  const image = require("../gifs/shoe.gif")
+  const image = require("../gifs/shoe.gif") //background image
   const URL = "http://localhost:3001"
   let navigate = useNavigate()
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [changePage, setChangePage] = useState(false)
+  const [changePage, setChangePage] = useState(false) //Will trigger navigate when true
 
+  //When user submits email and password, page is redirected back to the login page
+  //If duplicate email exists send an alert
   const register = async (e) => {
     e.preventDefault()
-
     try {
       const res = await axios
         .post(`${URL}/new-user`, { email, password })
@@ -34,10 +35,14 @@ function Register(props) {
     }
   }
 
+  //Form is used to grab values of email and password input when submitted with a button and triggers register function
   return (
     <div className="landing-background">
-      <div className="App-header">
+      <div className="register-header">
         <h1 className="landing-logo">Lucidity</h1>
+        <Link className="nav" to="/">
+          back to login
+        </Link>
       </div>
       <div className="login-container">
         <img className="landing-image" src={image}></img>

@@ -25,41 +25,47 @@ import coding from "../gifs/coding.gif"
 import bebop from "../gifs/bebop.gif"
 import stars from "../gifs/stars.gif"
 import char from "../gifs/char.gif"
-import addBtn from "../buttons/add.png"
+//imported GIFs to ease manipulation
 
 const API = "http://localhost:3001"
 
+// *Referenced a youtube video to learn how to create a slideshow*
 const GifsSlideShow = ({ imgs }) => {
-  const [image, setImage] = useState(0)
+  const [GIFIndex, setGIFIndex] = useState(0)
 
+  //Ensures that the index starts at 0
   useEffect(() => {
-    setImage(0)
+    setGIFIndex(0)
   }, [])
 
-  const nextImg = () => {
-    if (image === imgs.length - 1) {
-      setImage(0)
+  //If image index is at the end of the array we set it back to the first
+  //else we add 1 to the index, sliding to the next image
+  const nextGIF = () => {
+    if (GIFIndex === imgs.length - 1) {
+      setGIFIndex(0)
     } else {
-      setImage(image + 1)
+      setGIFIndex(GIFIndex + 1)
     }
   }
 
-  const prevImg = () => {
-    if (image === 0) {
-      setImage(imgs.length - 1)
+  //If image index is at the beginning of the array we subtract 1, sliding to the previous image
+  //else subtract 1 to the index, sliding to the previous image.
+  const prevGIF = () => {
+    if (GIFIndex === 0) {
+      setGIFIndex(imgs.length - 1)
     } else {
-      setImage(image - 1)
+      setGIFIndex(GIFIndex - 1)
     }
   }
 
   return (
     <div className="slideshow">
-      <img className="mainImg" src={imgs[image]}></img>
+      <img className="mainImg" src={imgs[GIFIndex]}></img>
       <div className="arrows">
-        <button className="left-arrow" onClick={prevImg}>
+        <button className="left-arrow" onClick={prevGIF}>
           ◀
         </button>
-        <button className="right-arrow" onClick={nextImg}>
+        <button className="right-arrow" onClick={nextGIF}>
           ▶
         </button>
       </div>
@@ -67,10 +73,12 @@ const GifsSlideShow = ({ imgs }) => {
   )
 }
 
+//Site has hardcoded GIFs to choose from, Post MVP idea was to let the User add/delete additional GIFs
 function GIFs(props) {
-  const [URL, setURL] = useState("")
-  const [addedImg, setAddedImg] = useState("")
+  const [URL, setURL] = useState("") //new GIF links will be set here
+  const [addedImg, setAddedImg] = useState("") //When GIFs are remapped after adding a GIF, Data of that new GIF will be set here
   const [allImgs, setAllImgs] = useState([
+    //hardcoded GIFs set here.  Hardcoded GIFs and new GIFs are concatenated here.
     coding,
     cat,
     lips,
@@ -102,6 +110,8 @@ function GIFs(props) {
     getImages()
   }, [])
 
+  //setAllImgs concatenates hardcoded GIFs and addedGIFs
+  //URL input is reset afterwards to let the user add another GIF
   const getImages = async () => {
     const res = await axios.get(`${API}/get-image`)
     const imgURLs = res.data.images.map((img) => img.URL)
@@ -110,6 +120,9 @@ function GIFs(props) {
     setURL("")
   }
 
+  //setAllImgs concatenates hardcoded GIFs and addedGIFs
+  //New GIF is moved to the top of the array
+  //GIFs are remapped
   const addImage = async (e) => {
     e.preventDefault()
     try {
@@ -124,6 +137,8 @@ function GIFs(props) {
     }
   }
 
+  //Added GIF will be removed starting from the top of the array
+  //States are reset to allow the user to add a new GIF
   const deleteImage = async (_id) => {
     const res = await axios
       .delete(`${API}/delete-image/${_id}`)
@@ -137,6 +152,8 @@ function GIFs(props) {
       .catch((error) => console.log(error))
   }
 
+  //Form is used to submit and trigger add function, passing the input value
+  //A button is used to trigger delete function, deleting the new GIF starting from the stop/most recently added GIF
   return (
     <div>
       <GifsSlideShow imgs={allImgs} />
