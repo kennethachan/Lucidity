@@ -418,6 +418,8 @@ border: none;
   border-radius: 10px;
   margin-right: 30px;
   cursor: pointer;
+  position: relative;
+  right: 30px;
 }
 
 .addgif-btn:hover {
@@ -438,7 +440,7 @@ border: none;
   cursor: pointer;
   position: relative;
   bottom: 58px;
-  left: 60px;
+  left: 53px;
 }
 
 .deletegif-btn:hover {

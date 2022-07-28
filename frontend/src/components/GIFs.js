@@ -114,7 +114,8 @@ function GIFs(props) {
     e.preventDefault()
     try {
       const res = await axios.post(`${API}/new-image`, { URL }).then((res) => {
-        setAllImgs([...allImgs, URL])
+        setAllImgs([URL, ...allImgs])
+        allImgs.unshift(URL)
         setURL("")
         getImages()
       })
@@ -127,9 +128,10 @@ function GIFs(props) {
     const res = await axios
       .delete(`${API}/delete-image/${_id}`)
       .then((res) => {
-        setAddedImg([])
+        allImgs.shift()
         allImgs.pop()
         setURL("")
+        setAddedImg([])
         getImages()
       })
       .catch((error) => console.log(error))

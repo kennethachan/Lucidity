@@ -14,7 +14,6 @@ function Note(props) {
   const getNotes = async () => {
     const res = await axios.get(`${URL}/get-note`)
     setNote(res.data.notes)
-    console.log(res.data.notes)
   }
 
   useEffect(() => {
