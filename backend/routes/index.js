@@ -14,7 +14,7 @@ router.delete("/delete-note/:Id", controllers.deleteNote)
 router.put("/update-note/:Id", controllers.updateNotes)
 
 //Routes for login/register user
-router.get("/get-users/:email-:password", controllers.getUser)
+router.get("/get-users/", controllers.getUser)
 
 router.post("/new-user", controllers.newUser)
 

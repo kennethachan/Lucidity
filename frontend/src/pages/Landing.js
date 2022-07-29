@@ -10,27 +10,35 @@ function Landing(props) {
   let navigate = useNavigate()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [allData, setAllData] = useState([])
 
   //If email & password input value matches email and password in database pass, navigate to home page
   //If password does not match send an alert
   //input values are set in state and used to complete the URL to find user
   const login = async (e) => {
     e.preventDefault()
-    const res = await axios
-      .get(`${URL}/get-users/${email}-${password}`)
-      .then((res) => {
-        console.log(res.data.users.email)
-        if (
-          email === res.data.users.email &&
-          password === res.data.users.password
-        ) {
-          setEmail("")
-          setPassword("")
-          navigate("/home")
-        } else {
-          alert("Incorrect email or password")
-        }
-      })
+    const res = await axios.get(`${URL}/get-users/`).then((res) => {
+      console.log(res.data.users)
+
+      setAllData(res.data.users)
+
+      const userEmail = allData.filter((data) => data.email === email)
+      const userPassword = allData.filter((data) => data.password === password)
+
+      console.log(userEmail[0].email)
+      console.log(userPassword[0].password)
+
+      if (
+        email === userEmail[0].email &&
+        password === userPassword[0].password
+      ) {
+        setEmail("")
+        setPassword("")
+        navigate("/home")
+      } else {
+        alert("Incorrect email or password")
+      }
+    })
   }
 
   //Form is used to grab values of email and password input when submitted with a button and triggers login function
