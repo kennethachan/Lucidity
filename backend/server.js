@@ -16,6 +16,8 @@ app.use(logger("dev"))
 app.use(Parser.json())
 app.use(routes)
 
+app.use(express.static(`${__dirname}/client/build`))
+
 //Code below from Symentix.com to help debug 500 errors in NodeJS,ExpressJS application
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
@@ -29,6 +31,10 @@ app.use(function (err, req, res, next) {
     message: err.message,
     error: err,
   })
+})
+
+app.get("/*", (req, res) => {
+  res.sendFile(`${__dirname}/client/build/index.html`)
 })
 
 app.listen(PORT, () => {

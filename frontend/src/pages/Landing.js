@@ -15,6 +15,7 @@ function Landing(props) {
   //If email & password input value matches email and password in database pass, navigate to home page
   //If password does not match send an alert
   //input values are set in state and used to complete the URL to find user
+
   const login = async (e) => {
     e.preventDefault()
     const res = await axios.get(`${URL}/get-users/`).then((res) => {
