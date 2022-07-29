@@ -16,7 +16,8 @@ app.use(logger("dev"))
 app.use(Parser.json())
 app.use(routes)
 
-app.use(express.static(`${__dirname}/client/build`))
+// app.use(express.static(`${__dirname}/client/build`))
+app.use(express.static(`${__dirname}/frontend/build`))
 
 //Code below from Symentix.com to help debug 500 errors in NodeJS,ExpressJS application
 app.use(function (err, req, res, next) {
@@ -33,8 +34,12 @@ app.use(function (err, req, res, next) {
   })
 })
 
+// app.get("/*", (req, res) => {
+//   res.sendFile(`${__dirname}/client/build/index.html`)
+// })
+
 app.get("/*", (req, res) => {
-  res.sendFile(`${__dirname}/client/build/index.html`)
+  res.sendFile(`${__dirname}/frontend/build/index.html`)
 })
 
 app.listen(PORT, () => {
