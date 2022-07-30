@@ -6,7 +6,7 @@ import add from "../buttons/add.png"
 
 const URL =
   process.env.NODE_ENV == "production"
-    ? "https://lucidity-backend.herokuapp.com/"
+    ? "https://lucidity-backend.herokuapp.com"
     : "http://localhost:3001"
 
 function Note(props) {
