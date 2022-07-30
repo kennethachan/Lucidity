@@ -29,7 +29,7 @@ import char from "../gifs/char.gif"
 
 const API =
   process.env.NODE_ENV == "production"
-    ? "https://lucidity-backend.herokuapp.com"
+    ? "https://lucidity-productivity.herokuapp.com"
     : "http://localhost:3001"
 
 // *Referenced a youtube video to learn how to create a slideshow*

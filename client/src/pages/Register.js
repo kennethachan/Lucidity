@@ -8,7 +8,7 @@ function Register(props) {
   const image = require("../gifs/shoe.gif") //background image
   const URL =
     process.env.NODE_ENV == "production"
-      ? "https://lucidity-backend.herokuapp.com"
+      ? "https://lucidity-productivity.herokuapp.com"
       : "http://localhost:3001"
   let navigate = useNavigate()
 
