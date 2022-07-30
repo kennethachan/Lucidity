@@ -27,7 +27,10 @@ import stars from "../gifs/stars.gif"
 import char from "../gifs/char.gif"
 //imported GIFs to ease manipulation
 
-const API = "http://localhost:3001"
+const API =
+  process.env.NODE_ENV == "production"
+    ? "https://lucidity-backend.herokuapp.com/"
+    : "http://localhost:3001"
 
 // *Referenced a youtube video to learn how to create a slideshow*
 const GifsSlideShow = ({ imgs }) => {

@@ -4,7 +4,10 @@ import axios from "axios"
 import NoteText from "./NoteText"
 import add from "../buttons/add.png"
 
-const URL = "http://localhost:3001"
+const URL =
+  process.env.NODE_ENV == "production"
+    ? "https://lucidity-backend.herokuapp.com/"
+    : "http://localhost:3001"
 
 function Note(props) {
   const [text, setText] = useState("")

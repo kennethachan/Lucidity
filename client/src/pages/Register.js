@@ -6,7 +6,10 @@ import { Link } from "react-router-dom"
 
 function Register(props) {
   const image = require("../gifs/shoe.gif") //background image
-  const URL = "http://localhost:3001"
+  const URL =
+    process.env.NODE_ENV == "production"
+      ? "https://lucidity-backend.herokuapp.com/"
+      : "http://localhost:3001"
   let navigate = useNavigate()
 
   const [email, setEmail] = useState("")
