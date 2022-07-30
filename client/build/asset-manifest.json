@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ad2657a9.css",
+    "main.js": "/static/js/main.d3e0db37.js",
+    "static/js/787.84123996.chunk.js": "/static/js/787.84123996.chunk.js",
+    "static/media/cat.gif": "/static/media/cat.605d1e7bba99b0ebaec2.gif",
+    "static/media/tie.gif": "/static/media/tie.96f1085962f2367e6178.gif",
+    "static/media/coke.gif": "/static/media/coke.35104489d817e173e7d2.gif",
+    "static/media/stars.gif": "/static/media/stars.a191940d32b38d04b8d3.gif",
+    "static/media/beach.gif": "/static/media/beach.1951b8ccd461dc7b9f23.gif",
+    "static/media/commute.gif": "/static/media/commute.7f82f4c2e3f20df162e6.gif",
+    "static/media/creamer.gif": "/static/media/creamer.e236d1c016baeab3d9fd.gif",
+    "static/media/bike.gif": "/static/media/bike.667cb745a73647519190.gif",
+    "static/media/crescent-moon.gif": "/static/media/crescent-moon.2c2012e7c17e960be87f.gif",
+    "static/media/breezy-night.gif": "/static/media/breezy-night.fca9788249f9248d3a99.gif",
+    "static/media/typing.gif": "/static/media/typing.1f8b738fba942f84c621.gif",
+    "static/media/drink.gif": "/static/media/drink.a4c280dc30781eadad16.gif",
+    "static/media/char.gif": "/static/media/char.d99b983cbd900d98396e.gif",
+    "static/media/lips.gif": "/static/media/lips.1e41e5bbf6e351e9b981.gif",
+    "static/media/shoe2.gif": "/static/media/shoe2.784b376c82d81d8bd4a2.gif",
+    "static/media/rose.gif": "/static/media/rose.4855a230d9ed4fbb4ab0.gif",
+    "static/media/nails.gif": "/static/media/nails.7c65bbf612654ad21d69.gif",
+    "static/media/flowers.gif": "/static/media/flowers.3ec0f6f48be95aba12ad.gif",
+    "static/media/bebop.gif": "/static/media/bebop.ddb8ee69c0e2c96e3b85.gif",
+    "static/media/night -ide.gif": "/static/media/night -ide.fd71bbceaf29c59e4c07.gif",
+    "static/media/coding.gif": "/static/media/coding.f72808dfd6f9ba8f99fa.gif",
+    "static/media/mirror.gif": "/static/media/mirror.07039420229625279cdc.gif",
+    "static/media/shoe.gif": "/static/media/shoe.48490a1ee62c7deed373.gif",
+    "static/media/night-drive.gif": "/static/media/night-drive.167b35b38298293e84d7.gif",
+    "static/media/tea.gif": "/static/media/tea.991ad2f8024f4ab0b99e.gif",
+    "index.html": "/index.html",
+    "main.ad2657a9.css.map": "/static/css/main.ad2657a9.css.map",
+    "main.d3e0db37.js.map": "/static/js/main.d3e0db37.js.map",
+    "787.84123996.chunk.js.map": "/static/js/787.84123996.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad2657a9.css",
+    "static/js/main.d3e0db37.js"
+  ]
+}
