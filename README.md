@@ -4,6 +4,8 @@
 
 ### By: Kenneth Chan
 
+#### [Heroku App](https://lucidity-productivity.herokuapp.com/)
+
 #### [Trello](https://trello.com/b/uZJVJFvj/lucidity#)
 
 #### [Component Hierarchy Diagram](https://app.diagrams.net/?libs=general;uml#LLucidity%20-%20Frontend%20Component%20Hierarchy%20Diagram)
