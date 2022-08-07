@@ -5,7 +5,7 @@ function Header(props) {
   return (
     <div className="App-header">
       <h1 className="logo">Lucidity</h1>
-      <Link className="nav" to="/">
+      <Link className="logout-link" to="/">
         logout
       </Link>
     </div>

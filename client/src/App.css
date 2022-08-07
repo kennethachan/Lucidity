@@ -56,6 +56,20 @@
   color: black;
 }
 
+.logout-link{
+  padding-bottom: 0;
+  color: white;
+  text-decoration: none;
+  padding-right: 20px;
+  position: relative;
+  bottom: 25px;
+}
+
+.logout-link:hover {
+  text-shadow: rgba(0, 0, 0, 0.6) 0px 15px 12px;
+  color: black;
+}
+
 .mainImg {
   width: 520px;
   height: 400px;
@@ -457,4 +471,139 @@ border: none;
 .deletegif-btn:hover {
   color: white;
   box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+@media only screen and (max-width:414px) {
+  .App {
+    width: 414px;
+    height: 1350px;
+  }
+
+  .App-header {
+    max-width: 414px;
+  }
+
+  .landing-logo {
+    text-align: center;
+  }
+
+  .landing-image {
+    width: 235px;
+    background-size:cover;
+    opacity:1;
+  }
+
+  .login-background {
+    position: relative;
+    bottom: 0px;
+  }
+
+  .register-header{
+    text-align: center;
+  }
+  .nav {
+    font-size: 13px;
+    text-align: center;
+    padding-right:0px;
+    position: relative;
+    top: 470px;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .logout-link {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    top: 0px;
+    left: 30px;
+  }
+
+  .components {
+    width: 350px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .gif-audio {
+    width: 350px;
+    position: relative;
+    bottom: 650px;
+  }
+  .note-wrapper {
+    width: 350px;
+    position: relative;
+    top: 550px;
+  }
+
+ .input-text {
+    width: 200px;
+  }
+
+  .add {
+    left:250px;
+    top: 18px;
+  }
+
+  .edit-text {
+    width: 200px;
+    border: none;
+  }
+
+ .text {
+  width: 215px;
+ }
+
+ .edit {
+position: relative;
+left: 110px;
+ }
+
+ .save {
+  position: relative;
+  left: 110px;
+ }
+
+ .delete {
+  position: relative;
+  left: 150px;
+ }
+
+  .mainImg {
+    width: 290px;
+    height: 290px;
+  }
+
+  .arrows {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    bottom: 145px;
+  }
+
+  .left-arrow {
+    position: relative;
+    right: 0px;
+    bottom: 0px;
+  }
+  
+  .right-arrow {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+  }
+
+  .GIF-form {
+    width: 325px;
+  }
+  
+  .audio-container{
+    width: 290px;
+  }
 }
