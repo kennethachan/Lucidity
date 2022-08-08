@@ -3,7 +3,7 @@ const controllers = require("../controllers")
 const router = Router()
 
 //Routes for notepad
-router.get("/", (req, res) => res.send("This is root!"))
+// router.get("/", (req, res) => res.send("This is root!"))
 
 router.get("/get-note", controllers.getNote)
 
