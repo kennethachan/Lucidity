@@ -4,7 +4,7 @@ import React from "react"
 //Major limitation - Encountered "reaching maximum play limits" when using embed code
 function Audio(props) {
   return (
-    <div>
+    <div className="audio-wrapper">
       <div className="audio-container">
         <p className="audio-name">japanese jazz when driving on a warm night</p>
         <iframe
